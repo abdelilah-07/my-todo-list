@@ -1,139 +1,346 @@
+/* =================================================
+   GLOBAL RESET
+================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f1f1f1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  background: #000;
+  color: #f0e9f2;
+  font-family: "Arial", sans-serif;
 }
 
+/* =================================================
+   LAYOUT
+================================================= */
 
-.todo-title {
-  font-size: 2.5rem;       /* Large, bold font size */
-  font-weight: bold;
-  color: #333;             /* Dark gray text for contrast */
-  text-align: center;      /* Center text alignment */
-  margin: 0;
-  padding: 10px 20px;
-  border-bottom: 3px solid #4caf50; /* Green underline for emphasis */
-  display: inline-block;
+.taskify {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 1rem;
 }
 
-.todo-subtitle {
-  font-size: 1.2rem;       /* Smaller subtitle font */
-  font-weight: 300;
-  color: #666;             /* Lighter gray for subtitle */
-  margin-top: 10px;
+/* =================================================
+   HEADER
+================================================= */
+
+.taskify-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
+
+.taskify-header h1 {
+  font-size: 3rem;
+}
+
+.subtitle {
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+/* =================================================
+   INPUT
+================================================= */
 
 .todo-container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  width: 500px;
-  max-width: 550px;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Space between input and button */
-  margin-bottom: 10px;
+  background: #111;
+  padding: 1rem;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.3fr 0.6fr auto;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
 }
 
-.todo-input {
-  flex: 1; /* Makes the input take up remaining space */
-  padding: 15px;
-  width:450x;
-  font-size: 18px;
-  border: 2px solid #ddd;
-  /* border-radius: 25px; */
+.todo-input,
+.todo-container select,
+.todo-container input[type="datetime-local"],
+.todo-container input[type="number"] {
+  background: #222;
+  border: 1px solid #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.todo-input:focus,
+.todo-container select:focus,
+.todo-container input:focus {
   outline: none;
-  background-color: #fafafa;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  border-color: #ff3258;
 }
 
-.todo-input:focus {
-  border-color: #4caf50;
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
-}
-
-.todo-input::placeholder {
-  color: #bbb;
-  font-style: italic;
-}
-
-.todo-input:invalid {
-  border-color: red;
-}
-
-.todo-input:focus:invalid {
-  box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
-}
+/* =================================================
+   BUTTONS
+================================================= */
 
 .save-button {
-  padding: 15px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #4caf50;
+  background: #ff3258;
   border: none;
-  /* border-radius: 25px; */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
 }
 
 .save-button:hover {
-  background-color: #45a049;
+  background: #e6133d;
 }
 
-.save-button:active {
-  transform: scale(0.98); /* Subtle click effect */
+.edit-btn {
+  background: #2563eb;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
 }
 
-.todo-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 200px; /* Set a maximum height for the list */
-  overflow-y: auto; /* Enable vertical scrolling */
-  background-color: #fff; /* Ensure a clean white background */
-  border: 1px solid #ddd; /* Add a border for separation */
-  border-radius: 8px; /* Keep the rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+.edit-btn:hover {
+  background: #1e40af;
 }
-
-.todo-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.todo-item:hover{
-  background-color: lightgreen;
-}
-
-/* .todo-item span {
-  flex: 1;
-} */
 
 .delete-button {
-  background-color: #ff4d4d;
-  color: white;
+  background: crimson;
   border: none;
-  padding: 5px 10px;
-  /* border-radius: 5px; */
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color 0.3s;
+  font-size: 0.75rem;
 }
 
 .delete-button:hover {
-  background-color: #e04141;
+  background: darkred;
+}
+
+.save-btn {
+  background: #22c55e;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background: #555;
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #15803d;
+}
+
+.cancel-btn:hover {
+  background: #333;
+}
+
+/* =================================================
+   PROGRESS BAR
+================================================= */
+
+.progress-container {
+  margin-bottom: 1.4rem;
+}
+
+.progress-bar {
+  margin-top: 0.3rem;
+  background: #444;
+  height: 6px;
+  border-radius: 50px;
+}
+
+.progress-bar div {
+  background: linear-gradient(90deg, salmon, #ff3258);
+  height: 100%;
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
+/* =================================================
+   FILTERS
+================================================= */
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.filter-chip {
+  background: #222;
+  border: 1px solid #333;
+  padding: 4px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.filter-chip.active {
+  background: #ff3258;
+  color: white;
+  border-color: #ff3258;
+}
+
+.filter-select {
+  background: #222;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 8px;
+  padding: 5px 7px;
+}
+
+/* =================================================
+   TODO LIST
+================================================= */
+
+.todo-list {
+  list-style: none;
+}
+
+/* =================================================
+   TASK ITEM
+================================================= */
+
+.todo-item {
+  background: #111;
+  margin-bottom: 0.6rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  display: grid;
+  grid-template-columns: 2fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  cursor: grab;
+}
+
+.todo-item:hover {
+  border-color: salmon;
+}
+
+.todo-item:active {
+  transform: scale(0.98);
+}
+
+.todo-item.done span {
+  color: gray;
+  text-decoration: line-through;
+}
+
+/* ======================
+   TASK INFO
+======================*/
+
+.task-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ======================
+   CATEGORY BADGE
+======================*/
+
+.task-badge {
+  background: #e3f2fd;
+  color: #2563eb;
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  width: fit-content;
+  border-radius: 999px;
+}
+
+/* ======================
+   DUE TIME DISPLAY
+======================*/
+
+.task-due {
+  font-size: 0.7rem;
+  color: #f59e0b;
+}
+
+/* ======================
+   DUE STATUS
+======================*/
+
+.todo-item.overdue {
+  border-left: 4px solid #dc2626;
+}
+
+.todo-item.due-soon {
+  border-left: 4px solid #f59e0b;
+}
+
+/* ======================
+   ACTION BUTTONS
+======================*/
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* ======================
+   EDIT MODE
+======================*/
+
+.edit-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1.2fr 0.6fr auto auto;
+  gap: 6px;
+}
+
+.edit-form input,
+.edit-form select {
+  background: #222;
+  border: 1px solid #333;
+  color: white;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 750px) {
+  .todo-container,
+  .edit-form {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .todo-item {
+    grid-template-columns: 1fr;
+  }
+
+  .task-actions {
+    justify-content: flex-end;
+  }
 }
