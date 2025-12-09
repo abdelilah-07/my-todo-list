@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+✅ Taskify – Task Manager App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Taskify is a modern task management web application built with React that helps users organize daily tasks using categories, progress tracking, filters, reminders, and drag-and-drop functionality.
 
-## Available Scripts
+The app focuses on clean UI, accessibility, and real-world CRUD features, while persisting all data locally using localStorage.
 
-In the project directory, you can run:
+🚀 Features
 
-### `npm start`
+✅ Create, edit, complete, and delete tasks (CRUD)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+✅ Categorize tasks (Work, Study, Personal, Health, etc.)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ Filter tasks by status (All / Active / Done)
 
-### `npm test`
+✅ Drag & drop task reordering
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Progress tracking with completion bar
 
-### `npm run build`
+✅ Due dates with reminder alerts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+✅ Persistent storage via localStorage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Fully responsive design
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+✅ Accessibility-friendly interface
 
-### `npm run eject`
+🧰 Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+JavaScript (ES6)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+HTML5
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+CSS3
 
-## Learn More
+React Hooks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Local Storage API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Drag & Drop APIs
 
-### Code Splitting
+🧠 Concepts Practiced
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Component-based architecture
 
-### Analyzing the Bundle Size
+State management using Hooks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Controlled forms & inputs
 
-### Making a Progressive Web App
+CRUD operations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Filtering & derived state
 
-### Advanced Configuration
+Side effects handling with useEffect
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Drag-and-drop interactions
 
-### Deployment
+Responsive UI & accessibility basics
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+⚙️ Installation & Setup
 
-### `npm run build` fails to minify
+Clone the repo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+git clone https://github.com/YOUR_USERNAME/taskify.git
+
+
+Install dependencies
+
+npm install
+
+
+Start the development server
+
+npm start
+
+🎯 Purpose
+
+This project was built as part of my frontend portfolio to practice building fully featured React applications with real-world functionality such as:
+
+CRUD workflows
+
+Complex state management
+
+User experience features (filters, reminders, progress tracking)
+
+👤 Author
+
+Abdelilah El Kalai
+Web Software Developer
+
+
+GitHub: https://github.com/abdelilah-07
+
+LinkedIn: https://linkedin.com/in/abdelilah07/
